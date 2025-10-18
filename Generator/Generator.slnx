@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BusinessLayer/GeneratorBusinessLayer.csproj" Id="858f6db7-839d-4284-aa49-7919582c3d6c" />
+  <Project Path="Generator/Generator.csproj" Id="f4e1bb2b-3826-4f5b-a69e-1e27473ed768" />
+  <Project Path="GeneratorDataLayer/GeneratorDataLayer.csproj" Id="0c9a88d7-6a55-4209-bd5f-c2262ec6de98" />
+  <Project Path="Global/Global.csproj" Id="0fa0d527-1a14-4c0a-bf6a-919a6fa468bb" />
+</Solution>

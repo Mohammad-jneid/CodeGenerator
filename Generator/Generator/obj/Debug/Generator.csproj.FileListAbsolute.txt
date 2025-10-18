@@ -1,0 +1,17 @@
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\Generator.exe.config
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\Generator.exe
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\Generator.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\BusinessLayer.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\GeneratorDataLayer.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\BusinessLayer.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\GeneratorDataLayer.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\Generator.csproj.AssemblyReference.cache
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\GenerateCode.DatabasesList.resources
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\Generator.Properties.Resources.resources
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\Generator.csproj.GenerateResource.cache
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\Generator.csproj.CoreCompileInputs.cache
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\Generator.csproj.Up2Date
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\Generator.exe
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\Generator.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\Global.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\Global.pdb

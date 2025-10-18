@@ -1,0 +1,11 @@
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\bin\Debug\GeneratorDataLayer.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\bin\Debug\GeneratorDataLayer.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\obj\Debug\GeneratorBusinessLayer.csproj.AssemblyReference.cache
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\obj\Debug\GeneratorBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\obj\Debug\Generato.B474ED1E.Up2Date
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\bin\Debug\Global.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\BusinessLayer\bin\Debug\Global.pdb

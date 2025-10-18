@@ -1,0 +1,9 @@
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\GeneratorDataLayer\bin\Debug\GeneratorDataLayer.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\GeneratorDataLayer\bin\Debug\GeneratorDataLayer.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\GeneratorDataLayer\obj\Debug\GeneratorDataLayer.csproj.AssemblyReference.cache
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\GeneratorDataLayer\obj\Debug\GeneratorDataLayer.csproj.CoreCompileInputs.cache
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\GeneratorDataLayer\obj\Debug\GeneratorDataLayer.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\GeneratorDataLayer\obj\Debug\GeneratorDataLayer.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\GeneratorDataLayer\bin\Debug\Global.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\GeneratorDataLayer\bin\Debug\Global.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\GeneratorDataLayer\obj\Debug\Generato.E8684722.Up2Date

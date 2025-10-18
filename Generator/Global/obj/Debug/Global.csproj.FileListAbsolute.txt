@@ -1,0 +1,6 @@
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Global\bin\Debug\Global.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Global\bin\Debug\Global.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Global\obj\Debug\Global.csproj.AssemblyReference.cache
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Global\obj\Debug\Global.csproj.CoreCompileInputs.cache
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Global\obj\Debug\Global.dll
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Global\obj\Debug\Global.pdb
