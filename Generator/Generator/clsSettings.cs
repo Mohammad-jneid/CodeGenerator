@@ -11,8 +11,6 @@ namespace GenerateCode
 
     internal class clsSettings
     {
-        //public static string connectionstring = "Server=.;DataBase=DVLD;user Id=sa;Password=123456";
-
         public static string ProjectName { get; set; } = "MyWinFormsApp";
 
         private static string _projectRootPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "MyWinFormsApp");

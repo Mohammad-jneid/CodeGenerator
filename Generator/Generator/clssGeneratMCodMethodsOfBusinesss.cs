@@ -19,6 +19,7 @@ namespace GenerateCode
 $@"using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
@@ -43,7 +44,7 @@ using System.Threading.Tasks;
 
         public static string GetAssignValueFromParametersToObjectCode(string PropertyName)
         {
-            return $"this.{PropertyName} = {PropertyName};"; ;
+            return $"this.{PropertyName} = {PropertyName.ToLower()};"; ;
         }
 
         public static string GetUpdateMethodCode(string TableName, string parameters)
@@ -56,10 +57,9 @@ using System.Threading.Tasks;
                 TableName.Remove(TableName.Length - 1) : TableName;
 
             string Content = $@"        private bool _Update{singularTableName}()
-                {{
-                    // Call Data Access Layer
-                    return {ClassNameOfDataAccess}.Update{singularTableName}({parameters});
-                }}";
+        {{
+                return {ClassNameOfDataAccess}.Update{singularTableName}({parameters});
+        }}";
 
             return Content;
         }
@@ -67,7 +67,7 @@ using System.Threading.Tasks;
         public static string GetAddMethodCode(string TableName, string parameters)
         {
             string ClassNameOfDataAccess = $"cls{TableName}Data";
-            TableName = TableName.Remove(TableName.Length - 1); // Remove the last letter (s)
+            TableName = TableName. EndsWith("s")?  TableName.Remove(TableName.Length - 1) : TableName; // Remove the last letter (s)
 
             string Content =
                             $@"        private bool _AddNew{TableName}()
@@ -191,7 +191,7 @@ using System.Threading.Tasks;
                 if (!record.IsPrimaryKey) // Don't create local variable for primary key
                 {
                     string defaultValue =clsGlobalClass.GetDefaultValue (record.CSharpType);
-                    variables.AppendLine($"{record.CSharpType} {record.Name} = {defaultValue};");
+                    variables.AppendLine($"\t\t\t{record.CSharpType} {record.Name} = {defaultValue};");
                 }
             }
 
@@ -229,7 +229,23 @@ using System.Threading.Tasks;
 
             return string.Join(", ", parameters);
         }
+        public static string GetDeleteMethodCode(string TableName, string parameterName, string parameterType = "int")
+        {
+            if (string.IsNullOrEmpty(TableName))
+                TableName = "Table";
 
+            string ClassNameOfDataAccess = $"cls{TableName}Data";
+            string singularTableName = TableName.EndsWith("s") ?
+                TableName.Remove(TableName.Length - 1) : TableName;
+
+            string Content = $@"
+        public static bool Delete{singularTableName}({parameterType} {parameterName})
+        {{
+            return {ClassNameOfDataAccess}.Delete{singularTableName}({parameterName});
+        }}";
+
+            return Content;
+        }
         public static string GetFindBySpecificColumnMethodCode(string TableName, clsRecordDetails column)
         {
             if (string.IsNullOrEmpty(TableName))

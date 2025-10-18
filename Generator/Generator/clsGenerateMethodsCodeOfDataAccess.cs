@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq.Expressions;
 
 namespace GenerateCode
 {
@@ -59,7 +61,38 @@ namespace GenerateCode
 
             return Content;
         }
+        public static string GetDeleteMethodCode(string TableName, string parameterName, string parameterType = "int")
+        {
+            string singularTableName = TableName.EndsWith("s") ? TableName.Remove(TableName.Length - 1) : TableName;
 
+            string Content = $@"
+        public static bool Delete{singularTableName}({parameterType} {parameterName})
+        {{
+            int rowsAffected = 0;
+            string query = @""DELETE FROM {TableName} WHERE {parameterName} = @{parameterName}"";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {{
+                command.Parameters.AddWithValue(""@{parameterName}"", {parameterName});
+
+                try
+                {{
+                    connection.Open();
+                    rowsAffected = command.ExecuteNonQuery();
+                }}
+                catch (Exception ex)
+                {{
+                    // Handle exception
+                    return false;
+                }}
+            }}
+
+            return (rowsAffected > 0);
+        }}";
+
+            return Content;
+        }
         private static string GenerateRefParametersForColumn(clsRecordDetails targetColumn)
         {
             List<string> parameters = new List<string>();
@@ -91,74 +124,7 @@ namespace GenerateCode
 
             return assignments.ToString();
         }
-        /*  static void HandleTheNallubleValue(ref string AddParameters, string ColumnName)
-          {
-              AddParameters += $@"      
-                  if ({ColumnName} != """" && {ColumnName} != null)
-                  command.Parameters.AddWithValue(""@{ColumnName}"", {ColumnName});
-                  else  command.Parameters.AddWithValue(""@{ColumnName}"", System.DBNull.Value);
-
-  ";
-              return;
-          }
-          static string GetAddParameters()
-          {
-              string AddParameters = "\n";
-              foreach (var item in clsGlobalClass._ColumnDetails)
-              {
-                  if (item.Name != clsGlobalClass._PrimaryKeyColumn)
-                      if (item.IsNullable)
-                      {
-                          HandleTheNallubleValue(ref AddParameters, item.Name);
-                      }
-                      else
-                          AddParameters += $"\t\t\t\tCommand.Parameters.AddWithValue(@\"{item.Name}\" , {item.Name});\n";
-              }
-
-              return AddParameters;
-          }*/
-        /*        public static string GetAddMethodCode(string TableName, string Parameters)
-                {
-                    //TableName = ;
-
-                    string Content = $@"
-                    public static int AddNew{TableName.Remove(TableName.Length - 1)}({Parameters})
-                    {{
-                        int {TableName.Remove(TableName.Length - 1)}ID = -1 ;
-                            string query = @"" Insert into {TableName} ({string.Join(",", clsGlobalClass.ParametersAsArray)})
-                        VALUES (@{string.Join(",", clsGlobalClass.ParametersAsArray)})
-                        SELECT SCOPE_IDENTITY();""
-                        using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-                        using(SqlCommand Command = new SqlCommand(query,Connection))
-                        {{
-                                {GetAddParameters()}
-                        try
-                        {{
-                            Connection.Open();
-                            object result = command.ExecuteScalar();
-                            if(result != null && int.TryParse(result.ToString() , out int InsertedID))
-                            {{
-                                {TableName.Remove(TableName.Length - 1)}ID = InsertedID ;
-                            }}
-                        }}
-                        catch (Exception)
-                        {{
-                            throw;
-                        }}
-                        }}
-                    return {TableName.Remove(TableName.Length - 1)}ID;
-                    }}
-
-
-
-
-        ";
-
-
-                    return Content;
-                }
-        */
-
+         
         public static string GetAddMethodCode(string TableName, string Parameters)
         {
             string singularTableName = TableName.EndsWith("s") ? TableName.Remove(TableName.Length - 1) : TableName;
@@ -428,8 +394,8 @@ namespace GenerateCode
                 try
                 {{
                     connection.Open();
-                    object result = command.ExecuteScalar();
-                    exists = (result != null);
+                   SqlDataReader reader = command.ExecuteReader();
+                    exists = reader.HasRows;
                 }}
                 catch (Exception ex)
                 {{
@@ -458,6 +424,42 @@ namespace GenerateCode
 
             return string.Join(", ", parameters);
         }
+        static string Cast(string Name, string CSharpType)
+        {
+            switch (CSharpType.ToLower())
+            {
+                case "datetime":
+                    return $"Convert.ToDateTime(reader[\"{Name}\"])";
+                case "int":
+                case "int32":
+                    return $"(int)reader[\"{Name}\"]";
+                case "string":
+                    return $"reader[\"{Name}\"].ToString()";
+                case "bool":
+                case "boolean":
+                    return $"Convert.ToBoolean(reader[\"{Name}\"])";
+                case "long":
+                case "int64":
+                    return $"Convert.ToInt64(reader[\"{Name}\"])";
+                case "double":
+                    return $"Convert.ToDouble(reader[\"{Name}\"])";
+                case "decimal":
+                    return $"Convert.ToDecimal(reader[\"{Name}\"])";
+                case "float":
+                    return $"Convert.ToSingle(reader[\"{Name}\"])";
+                case "byte":
+                    return $"(byte)reader[\"{Name}\"]";
+                case "short":
+                case "int16":
+                    return $"(short)reader[\"{Name}\"]";
+                case "char":
+                    return $"Convert.ToChar(reader[\"{Name}\"])";
+                case "guid":
+                    return $"Guid.Parse(reader[\"{Name}\"].ToString())";
+                default:
+                    return $"reader[\"{Name}\"].ToString()";
+            }
+        }
 
         private static string GenerateReaderAssignments()
         {
@@ -468,12 +470,50 @@ namespace GenerateCode
             {
                 if (!record.IsPrimaryKey)
                 {
-                    assignments.AppendLine($"{record.Name} = ({record.CSharpType})reader[\"{record.Name}\"];");
+                    if (!record.IsNullable)
+                    {
+                        assignments.AppendLine($"\t\t\t\t\t\t\t{record.Name} = {Cast(record.Name, record.CSharpType)};");
+                    }
+                    else
+                    {
+                        string defaultValue =clsGlobalClass. GetDefaultValue(record.CSharpType);
+                        string content = $"\t\t\t\t\t\t\t{record.Name} = reader[\"{record.Name}\"] == DBNull.Value ? {defaultValue} : {Cast(record.Name, record.CSharpType)};";
+                        assignments.AppendLine(content);
+                    }
                 }
             }
 
             return assignments.ToString();
         }
-
+        private static string GetCastType(string cSharpType)
+        {
+            // For some types, we need different casting approaches
+            switch (cSharpType.ToLower())
+            {
+                case "string":
+                    return "Convert.ToString(";
+                case "int":
+                case "int32":
+                    return "Convert.ToInt32(";
+                case "long":
+                case "int64":
+                    return "Convert.ToInt64(";
+                case "bool":
+                case "boolean":
+                    return "Convert.ToBoolean(";
+                case "datetime":
+                    return "Convert.ToDateTime(";
+                case "double":
+                    return "Convert.ToDouble(";
+                case "decimal":
+                    return "Convert.ToDecimal(";
+                case "float":
+                    return "Convert.ToSingle(";
+                case "byte":
+                    return "Convert.ToByte(";
+                default:
+                    return $"({cSharpType})";
+            }
+        }
     }
 }

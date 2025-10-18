@@ -10,28 +10,28 @@ using System.Threading.Tasks;
 namespace Generator
 {
     public static class clsGlobalClass
-    { 
-            public static string GetDefaultValue(string csharpType)
+    {
+        public static string GetDefaultValue(string csharpType)
+        {
+            switch (csharpType.ToLower())
             {
-                switch (csharpType.ToLower())
-                {
-                    case "int": return "-1";
-                    case "long": return "0L";
-                    case "short": return "0";
-                    case "byte": return "0";
-                    case "bool": return "false";
-                    case "decimal": return "0m";
-                    case "double": return "0.0";
-                    case "float": return "0f";
-                    case "string": return "\"\"";
-                    case "datetime": return "DateTime.MinValue";
-                    case "timespan": return "TimeSpan.Zero";
-                    case "guid": return "Guid.Empty";
-                    case "byte[]": return "new byte[0]";
-                    case "object": return "null";
-                    default: return "null"; // fallback for unknown or reference types
-                }
+                case "int": return "-1";
+                case "long": return "0L";
+                case "short": return "0";
+                case "byte": return "0";
+                case "bool": return "false";
+                case "decimal": return "0m";
+                case "double": return "0.0";
+                case "float": return "0f";
+                case "string": return "null";  // CHANGED FROM "" to null
+                case "datetime": return "DateTime.MinValue";
+                case "timespan": return "TimeSpan.Zero";
+                case "guid": return "Guid.Empty";
+                case "byte[]": return "new byte[0]";
+                case "object": return "null";
+                default: return "null"; // fallback for unknown or reference types
             }
+        }
         public static string ParametersAsArray ;
         public static string MapSqlToCSharpType(string sqlType, bool isNullable)
         {
@@ -88,39 +88,3 @@ namespace Generator
     }
 }
 
-/*        public static string ConvertSqlTypeToCSharpType(string sqlType)
-            {
-                switch (sqlType.ToLower())
-                {
-                    case "int": return "int";
-                    case "bigint": return "long";
-                    case "smallint": return "short";
-                    case "tinyint": return "byte";
-                    case "bit": return "bool";
-                    case "decimal":
-                    case "numeric":
-                    case "money":
-                    case "smallmoney": return "decimal";
-                    case "float": return "double";
-                    case "real": return "float";
-                    case "char":
-                    case "varchar":
-                    case "text":
-                    case "nchar":
-                    case "nvarchar":
-                    case "ntext": return "string";
-                    case "date":
-                    case "datetime":
-                    case "datetime2":
-                    case "smalldatetime":
-                    case "datetimeoffset": return "DateTime";
-                    case "time": return "TimeSpan";
-                    case "binary":
-                    case "varbinary":
-                    case "image": return "byte[]";
-                    case "uniqueidentifier": return "Guid";
-                    case "sql_variant": return "object";
-                    default: return "string"; // fallback for unknown types
-                }
-            }
-*/        
