@@ -3,52 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|c:\\users\\messi\\onedrive\\desktop\\myprojects\\generator\\generator\\generator\\generateor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\generateor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\generateor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\generateor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\clsgeneratemethodscodeofdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\clsgeneratemethodscodeofdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\clsgenerateclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\clsgenerateclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\clssgeneratmcodmethodsofbusinesss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\clssgeneratmcodmethodsofbusinesss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\clsgenerateclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\clsgenerateclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\generateor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\generateor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\global\\clscolumninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|solutionrelative:global\\clscolumninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|c:\\users\\messi\\onedrive\\desktop\\myprojects\\generator\\generator\\generator\\frmcolumnselectionform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\frmcolumnselectionform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|c:\\users\\messi\\onedrive\\desktop\\myprojects\\generator\\generator\\generator\\frmcolumnselectionform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\frmcolumnselectionform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|c:\\users\\messi\\onedrive\\desktop\\myprojects\\generator\\generator\\generator\\generateor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\generateor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\clsgeneratemethodscodeofdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\clsgeneratemethodscodeofdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C9A88D7-6A55-4209-BD5F-C2262EC6DE98}|GeneratorDataLayer\\GeneratorDataLayer.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generatordatalayer\\clsdatabasedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C9A88D7-6A55-4209-BD5F-C2262EC6DE98}|GeneratorDataLayer\\GeneratorDataLayer.csproj|solutionrelative:generatordatalayer\\clsdatabasedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\generateor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\generateor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{858F6DB7-839D-4284-AA49-7919582C3D6C}|BusinessLayer\\GeneratorBusinessLayer.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\businesslayer\\clsdatabasebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{858F6DB7-839D-4284-AA49-7919582C3D6C}|BusinessLayer\\GeneratorBusinessLayer.csproj|solutionrelative:businesslayer\\clsdatabasebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\global\\clsglobalclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|solutionrelative:global\\clsglobalclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{858F6DB7-839D-4284-AA49-7919582C3D6C}|BusinessLayer\\GeneratorBusinessLayer.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\businesslayer\\clsdatabasebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{858F6DB7-839D-4284-AA49-7919582C3D6C}|BusinessLayer\\GeneratorBusinessLayer.csproj|solutionrelative:businesslayer\\clsdatabasebusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\global\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|solutionrelative:global\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|c:\\users\\messi\\onedrive\\desktop\\myprojects\\generator\\generator\\generator\\frmcolumnselectionform .designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\frmcolumnselectionform .designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C9A88D7-6A55-4209-BD5F-C2262EC6DE98}|GeneratorDataLayer\\GeneratorDataLayer.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generatordatalayer\\clssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C9A88D7-6A55-4209-BD5F-C2262EC6DE98}|GeneratorDataLayer\\GeneratorDataLayer.csproj|solutionrelative:generatordatalayer\\clssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\generateor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|solutionrelative:generator\\generateor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\global\\clscolumninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|solutionrelative:global\\clscolumninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\global\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FA0D527-1A14-4C0A-BF6A-919A6FA468BB}|Global\\Global.csproj|solutionrelative:global\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4E1BB2B-3826-4F5B-A69E-1E27473ED768}|Generator\\Generator.csproj|C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\generator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,21 +82,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Generateor.cs",
               "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.cs",
               "RelativeDocumentMoniker": "Generator\\Generateor.cs",
               "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.cs",
               "RelativeToolTip": "Generator\\Generateor.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAAAIsAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAJgAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T13:21:10.465Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Generateor.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.cs",
+              "RelativeDocumentMoniker": "Generator\\Generateor.cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.cs [Design]",
+              "RelativeToolTip": "Generator\\Generateor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T13:12:57.496Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmColumnSelectionForm .cs [Design]",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\frmColumnSelectionForm .cs",
+              "RelativeDocumentMoniker": "Generator\\frmColumnSelectionForm .cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\frmColumnSelectionForm .cs [Design]",
+              "RelativeToolTip": "Generator\\frmColumnSelectionForm .cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T06:14:12.155Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",
@@ -124,80 +162,137 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "clsDataBaseData.cs",
-              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\GeneratorDataLayer\\clsDataBaseData.cs",
-              "RelativeDocumentMoniker": "GeneratorDataLayer\\clsDataBaseData.cs",
-              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\GeneratorDataLayer\\clsDataBaseData.cs",
-              "RelativeToolTip": "GeneratorDataLayer\\clsDataBaseData.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwLQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T14:25:08.969Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "clsGenerateMethodsCodeOfDataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clsGenerateMethodsCodeOfDataAccess.cs",
-              "RelativeDocumentMoniker": "Generator\\clsGenerateMethodsCodeOfDataAccess.cs",
-              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clsGenerateMethodsCodeOfDataAccess.cs",
-              "RelativeToolTip": "Generator\\clsGenerateMethodsCodeOfDataAccess.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAAAJoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T13:35:38.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "clsGenerateClass.cs",
               "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clsGenerateClass.cs",
               "RelativeDocumentMoniker": "Generator\\clsGenerateClass.cs",
               "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clsGenerateClass.cs",
               "RelativeToolTip": "Generator\\clsGenerateClass.cs",
-              "ViewState": "AgIAAFgBAAAAAAAAAAAAwGABAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAAAO0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T16:27:08.685Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Generateor.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.cs",
-              "RelativeDocumentMoniker": "Generator\\Generateor.cs",
-              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.cs [Design]",
-              "RelativeToolTip": "Generator\\Generateor.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T13:12:57.496Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-17T16:27:08.685Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "clssGeneratMCodMethodsOfBusinesss.cs",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clssGeneratMCodMethodsOfBusinesss.cs",
+              "RelativeDocumentMoniker": "Generator\\clssGeneratMCodMethodsOfBusinesss.cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clssGeneratMCodMethodsOfBusinesss.cs",
+              "RelativeToolTip": "Generator\\clssGeneratMCodMethodsOfBusinesss.cs",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAAABQBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T13:36:39.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsGenerateMethodsCodeOfDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clsGenerateMethodsCodeOfDataAccess.cs",
+              "RelativeDocumentMoniker": "Generator\\clsGenerateMethodsCodeOfDataAccess.cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clsGenerateMethodsCodeOfDataAccess.cs",
+              "RelativeToolTip": "Generator\\clsGenerateMethodsCodeOfDataAccess.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAowFwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T13:35:38.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmColumnSelectionForm .cs",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\frmColumnSelectionForm .cs",
+              "RelativeDocumentMoniker": "Generator\\frmColumnSelectionForm .cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\frmColumnSelectionForm .cs",
+              "RelativeToolTip": "Generator\\frmColumnSelectionForm .cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAA1wFAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T06:16:27.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "clsDataBaseData.cs",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\GeneratorDataLayer\\clsDataBaseData.cs",
+              "RelativeDocumentMoniker": "GeneratorDataLayer\\clsDataBaseData.cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\GeneratorDataLayer\\clsDataBaseData.cs",
+              "RelativeToolTip": "GeneratorDataLayer\\clsDataBaseData.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAAIMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T14:25:08.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "clsDataBaseBusiness.cs",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\BusinessLayer\\clsDataBaseBusiness.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\clsDataBaseBusiness.cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\BusinessLayer\\clsDataBaseBusiness.cs",
+              "RelativeToolTip": "BusinessLayer\\clsDataBaseBusiness.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T14:23:03.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "clsGlobalClass.cs",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Global\\clsGlobalClass.cs",
+              "RelativeDocumentMoniker": "Global\\clsGlobalClass.cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Global\\clsGlobalClass.cs",
+              "RelativeToolTip": "Global\\clsGlobalClass.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAA6wFQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T19:55:58.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmColumnSelectionForm .Designer.cs",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\frmColumnSelectionForm .Designer.cs",
+              "RelativeDocumentMoniker": "Generator\\frmColumnSelectionForm .Designer.cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\frmColumnSelectionForm .Designer.cs",
+              "RelativeToolTip": "Generator\\frmColumnSelectionForm .Designer.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAnwBkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T06:14:19.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "clsSettings.cs",
+              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\GeneratorDataLayer\\clsSettings.cs",
+              "RelativeDocumentMoniker": "GeneratorDataLayer\\clsSettings.cs",
+              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\GeneratorDataLayer\\clsSettings.cs",
+              "RelativeToolTip": "GeneratorDataLayer\\clsSettings.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAkwBAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T14:29:54.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Generateor.Designer.cs",
               "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.Designer.cs",
               "RelativeDocumentMoniker": "Generator\\Generateor.Designer.cs",
               "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.Designer.cs",
               "RelativeToolTip": "Generator\\Generateor.Designer.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAuwF4AAAB0AAAAAAAAAA==",
+              "ViewState": "AgIAAPQAAAAAAAAAAAA0wAYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T13:21:49.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "clssGeneratMCodMethodsOfBusinesss.cs",
-              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clssGeneratMCodMethodsOfBusinesss.cs",
-              "RelativeDocumentMoniker": "Generator\\clssGeneratMCodMethodsOfBusinesss.cs",
-              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clssGeneratMCodMethodsOfBusinesss.cs",
-              "RelativeToolTip": "Generator\\clssGeneratMCodMethodsOfBusinesss.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAIA3wA8AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T13:36:39.708Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "clsColumnInfo.cs",
               "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Global\\clsColumnInfo.cs",
               "RelativeDocumentMoniker": "Global\\clsColumnInfo.cs",
@@ -209,31 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "clsGlobalClass.cs",
-              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Global\\clsGlobalClass.cs",
-              "RelativeDocumentMoniker": "Global\\clsGlobalClass.cs",
-              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Global\\clsGlobalClass.cs",
-              "RelativeToolTip": "Global\\clsGlobalClass.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAuwFsAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T19:55:58.577Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "clsDataBaseBusiness.cs",
-              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\BusinessLayer\\clsDataBaseBusiness.cs",
-              "RelativeDocumentMoniker": "BusinessLayer\\clsDataBaseBusiness.cs",
-              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\BusinessLayer\\clsDataBaseBusiness.cs",
-              "RelativeToolTip": "BusinessLayer\\clsDataBaseBusiness.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T14:23:03.39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Global\\Class1.cs",
               "RelativeDocumentMoniker": "Global\\Class1.cs",
@@ -245,19 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "clsSettings.cs",
-              "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\GeneratorDataLayer\\clsSettings.cs",
-              "RelativeDocumentMoniker": "GeneratorDataLayer\\clsSettings.cs",
-              "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\GeneratorDataLayer\\clsSettings.cs",
-              "RelativeToolTip": "GeneratorDataLayer\\clsSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T14:29:54.383Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Program.cs",
               "RelativeDocumentMoniker": "Generator\\Program.cs",
@@ -269,19 +328,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Generateor.resx",
               "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.resx",
               "RelativeDocumentMoniker": "Generator\\Generateor.resx",
               "ToolTip": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\Generateor.resx",
               "RelativeToolTip": "Generator\\Generateor.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-10-17T17:29:27.318Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T17:29:27.318Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "clsSettings.cs",
               "DocumentMoniker": "C:\\Users\\messi\\OneDrive\\Desktop\\MyProjects\\Generator\\Generator\\Generator\\clsSettings.cs",
               "RelativeDocumentMoniker": "Generator\\clsSettings.cs",

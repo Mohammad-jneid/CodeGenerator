@@ -279,7 +279,7 @@ using System.Threading.Tasks;
                 if (record.Name != targetColumn.Name) // Don't create local variable for the search column
                 {
                     string defaultValue =clsGlobalClass.GetDefaultValue (record.CSharpType);
-                    variables.AppendLine($"{record.CSharpType} {record.Name} = {defaultValue};");
+                    variables.AppendLine($"\t\t\t{record.CSharpType} {record.Name} = {defaultValue};");
                 }
             }
 

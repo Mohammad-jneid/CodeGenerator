@@ -50,6 +50,12 @@
     <Compile Include="clsGenerateMethodsCodeOfDataAccess.cs" />
     <Compile Include="clsSettings.cs" />
     <Compile Include="clssGeneratMCodMethodsOfBusinesss.cs" />
+    <Compile Include="frmColumnSelectionForm .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmColumnSelectionForm .Designer.cs">
+      <DependentUpon>frmColumnSelectionForm .cs</DependentUpon>
+    </Compile>
     <Compile Include="Generateor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmColumnSelectionForm .resx">
+      <DependentUpon>frmColumnSelectionForm .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Generateor.resx">
       <DependentUpon>Generateor.cs</DependentUpon>
     </EmbeddedResource>

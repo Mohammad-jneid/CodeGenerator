@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
@@ -81,6 +82,11 @@ namespace Generator
          
         
         public static string _PrimaryKeyColumn;
+        public static Dictionary<string, List<string>> _ColumnPositionYouWantToFindBy = new Dictionary<string, List<string>>();
+
+
+    }
+}
 
 /*        public static string ConvertSqlTypeToCSharpType(string sqlType)
             {
@@ -117,6 +123,4 @@ namespace Generator
                     default: return "string"; // fallback for unknown types
                 }
             }
-*/        }
-
-    }
+*/        

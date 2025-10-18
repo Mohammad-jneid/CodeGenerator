@@ -17,13 +17,18 @@ namespace BusinessLayer
             return clsDataBaseData.LoadDataBasesToDataTable();
         }
 
-        public static List<clsRecordDetails> GetColomnInfoDetails(string DataBaseName , string TableName)
+        public static void LoadColomnInfoDetails(string DataBaseName , string TableName)
         {
-            return clsDataBaseData.GetColomnInfoDetails(DataBaseName, TableName);
+            clsDataBaseData.LoadColomnInfoDetails(DataBaseName, TableName);
         }
         public static List<string> GetTableOfSomeDataBase(string DataBaseName)
         {
             return clsDataBaseData.GetTableOfSomeDataBase(DataBaseName);
         }
+        public static DataTable LoadTablesToDataTable(string DataBaseName)
+        {
+            return clsDataBaseData.LoadTablesToDataTable(DataBaseName);
+        }
+        
     }
 }

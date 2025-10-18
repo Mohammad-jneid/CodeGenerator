@@ -40,7 +40,7 @@ namespace Generator
             this.DataBaseName = databaseName;
             this._ClassType = classtype == enClassType.DataAccess ? "Data" : "Business";
             this.TableName = tablename;
-            this.ClassName = classtype == enClassType.Business ? tablename : $"{tablename}Data" ;
+            this.ClassName = classtype == enClassType.Business ?"cls"+ tablename : $"cls{tablename}Data" ;
 
             this._CurrentFolderPath = currentFolderPath;
             _FilePath = Path.Combine(this._CurrentFolderPath, this.ClassName + ".cs");
@@ -148,19 +148,6 @@ namespace Generator
 
             return string.Join(", ", parameters);
         }
-        void FindPrimarykey()
-        {
-            var primaryKeyColumn = clsGlobalClass._ColumnDetails.FirstOrDefault(col => col.IsPrimaryKey);
-            if (primaryKeyColumn != null)
-            {
-                clsGlobalClass._PrimaryKeyColumn = primaryKeyColumn.Name;
-            }
-            else
-            {
-                // Fallback to first column if no primary key found
-                clsGlobalClass._PrimaryKeyColumn = clsGlobalClass._ColumnDetails.First().Name;
-            }
-        }
         string GenerateUpdateMethodParameters()
         {
             List<string> parameters = new List<string>();
@@ -207,11 +194,6 @@ namespace Generator
         {
             AddToFile("\n\n", "Save Method - Handles Add and Update Operations");
 
-            // First add the enum and mode property
-          /*  string enumCode = clssGeneratMCodMethodsOfBusinesss.GetModeEnumCode();
-            AddToFile(enumCode);*/
-
-            // Then add the Save method
             string methodCode = clssGeneratMCodMethodsOfBusinesss.GetSaveMethodCode(this.TableName);
             AddToFile(methodCode);
         }
@@ -239,24 +221,62 @@ namespace Generator
             var primaryKeyColumn = clsGlobalClass._ColumnDetails.FirstOrDefault(col => col.IsPrimaryKey);
             return primaryKeyColumn?.CSharpType ?? "int";
         }
+
         void GenerateAdditionalFindByMethods()
         {
-            List<clsRecordDetails> records = clsGlobalClass._ColumnDetails;
+            if (clsGlobalClass._ColumnDetails == null) return;
 
-            foreach (clsRecordDetails record in records)
+            // Get the columns that should have FindBy methods for this table
+            List<string> FindByColumns = new List<string>();
+            if (clsGlobalClass._ColumnPositionYouWantToFindBy.ContainsKey(this.TableName))
             {
-                if (record.YouWantToFindBy && !record.IsPrimaryKey)
-                {
-                    AddToFile("\n\n", $"FindBy{record.Name} Method - Finds by {record.Name}");
+                FindByColumns = clsGlobalClass._ColumnPositionYouWantToFindBy[this.TableName];
+            }
 
-                    string methodCode = clssGeneratMCodMethodsOfBusinesss.GetFindBySpecificColumnMethodCode(this.TableName, record);
+            foreach (string columnName in FindByColumns)
+            {
+                var column = clsGlobalClass._ColumnDetails.FirstOrDefault(c => c.Name == columnName);
+                if (column != null && !column.IsPrimaryKey)
+                {
+                    AddToFile("\n\n", $"FindBy{column.Name} Method - Finds by {column.Name}");
+
+                    string methodCode = clssGeneratMCodMethodsOfBusinesss.GetFindBySpecificColumnMethodCode(this.TableName, column);
                     AddToFile(methodCode);
+                }
+            }
+        }
+        void FindPrimarykey()
+        {
+
+            var primaryKeyColumn = clsGlobalClass._ColumnDetails.FirstOrDefault(col => col.IsPrimaryKey);
+            if (primaryKeyColumn != null)
+            {
+                clsGlobalClass._PrimaryKeyColumn = primaryKeyColumn.Name;
+            }
+            else
+            {
+                // Fallback to first column if no primary key found
+                clsGlobalClass._PrimaryKeyColumn = clsGlobalClass._ColumnDetails.First().Name;
+            }
+        }
+
+        public void LoadRecordDetails()
+        {
+                clsDataBaseBusiness.LoadColomnInfoDetails(this.DataBaseName, this.TableName);
+            List<string> FindByColumn = clsGlobalClass._ColumnPositionYouWantToFindBy
+                .Where(n => n.Key == this.TableName)
+                .Select(n => n.Value)
+                .FirstOrDefault();
+            foreach(var column in clsGlobalClass._ColumnDetails)
+            {
+                if (FindByColumn?.Contains(column.Name) == true)
+                {
+                    column.YouWantToFindBy = true;
                 }
             }
         }
         public void GeneratePropertyAndBusinessMethod()
         {
-            clsGlobalClass._ColumnDetails = clsDataBaseBusiness.GetColomnInfoDetails(this.DataBaseName, this.TableName);
             FindPrimarykey();
       
             GenerateTheProperty();
@@ -292,23 +312,34 @@ namespace Generator
                 AddToFile(clssGeneratMCodMethodsOfBusinesss.GetTheProperty(record.Name, record.CSharpType));
             }
         }
+        void GenerateAdditionalFindByDataAccessMethods()
+        {
+            if (clsGlobalClass._ColumnDetails == null) return;
+
+            // Get the columns that should have FindBy methods for this table
+            List<string> FindByColumns = new List<string>();
+            if (clsGlobalClass._ColumnPositionYouWantToFindBy.ContainsKey(this.TableName))
+            {
+                FindByColumns = clsGlobalClass._ColumnPositionYouWantToFindBy[this.TableName];
+            }
+
+            foreach (string columnName in FindByColumns)
+            {
+                var column = clsGlobalClass._ColumnDetails.FirstOrDefault(c => c.Name == columnName);
+                if (column != null && !column.IsPrimaryKey)
+                {
+                    AddToFile("\n\n", $"FindBy{column.Name} Method - Data Access Layer");
+
+                    string methodCode = clsGenerateMethodsCodeOfDataAccess.GetFindByColumnMethodCode(this.TableName, column);
+                    AddToFile(methodCode);
+                }
+            }
+        }
         public void GenerateDataAccessMethods()
         {
-            clsGlobalClass._ColumnDetails = clsDataBaseBusiness.GetColomnInfoDetails(this.DataBaseName, this.TableName);
+            //clsGlobalClass._ColumnDetails = clsDataBaseBusiness.GetColomnInfoDetails(this.DataBaseName, this.TableName);
+            FindPrimarykey();
 
-            // Find and set the primary key column
-            var primaryKeyColumn = clsGlobalClass._ColumnDetails.FirstOrDefault(col => col.IsPrimaryKey);
-            if (primaryKeyColumn != null)
-            {
-                clsGlobalClass._PrimaryKeyColumn = primaryKeyColumn.Name;
-            }
-            else
-            {
-                // Fallback to first column if no primary key found
-                clsGlobalClass._PrimaryKeyColumn = clsGlobalClass._ColumnDetails.First().Name;
-            }
-
-            // Generate Add method
             GenerateAddDataAccessMethod();
 
             // Generate Update method
@@ -318,6 +349,8 @@ namespace Generator
             GenerateFindDataAccessMethod();
             GenerateGetAllDataAccessMethod();
             GenerateIsExistsDataAccessMethod();
+            GenerateFindDataAccessMethod();
+            GenerateAdditionalFindByDataAccessMethods();
         }
         void GenerateFindDataAccessMethod()
         {
@@ -346,11 +379,6 @@ namespace Generator
             AddToFile(methodCode);
         }
 
-        //string GetPrimaryKeyType()
-        //{
-        //    var primaryKeyColumn = clsGlobalClass._ColumnDetails.FirstOrDefault(col => col.IsPrimaryKey);
-        //    return primaryKeyColumn?.CSharpType ?? "int";
-        //}
         string GenerateDataAccessMethodParameters(bool includePrimaryKey)
         {
             List<string> parameters = new List<string>();

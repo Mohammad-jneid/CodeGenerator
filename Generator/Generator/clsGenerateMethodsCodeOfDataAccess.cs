@@ -15,6 +15,82 @@ namespace GenerateCode
     internal class clsGenerateMethodsCodeOfDataAccess
     {
 
+
+        public static string GetFindByColumnMethodCode(string TableName, clsRecordDetails column)
+        {
+            string singularTableName = TableName.EndsWith("s") ? TableName.Remove(TableName.Length - 1) : TableName;
+
+            string refParameters = GenerateRefParametersForColumn(column);
+
+            string Content = $@"
+        public static bool Get{singularTableName}By{column.Name}({column.CSharpType} {column.Name}, {refParameters})
+        {{
+            bool isFound = false;
+            
+            string query = @""SELECT {string.Join(", ", clsGlobalClass._ColumnDetails.Select(col => col.Name))} 
+                            FROM {TableName} 
+                            WHERE {column.Name} = @{column.Name}"";
+            
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {{
+                command.Parameters.AddWithValue(""@{column.Name}"", {column.Name});
+                
+                try
+                {{
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {{
+                        if (reader.Read())
+                        {{
+                            isFound = true;
+                            {GenerateReaderAssignmentsForColumn(column)}
+                        }}
+                    }}
+                }}
+                catch (Exception ex)
+                {{
+                    // Handle exception
+                }}
+            }}
+            
+            return isFound;
+        }}";
+
+            return Content;
+        }
+
+        private static string GenerateRefParametersForColumn(clsRecordDetails targetColumn)
+        {
+            List<string> parameters = new List<string>();
+            List<clsRecordDetails> records = clsGlobalClass._ColumnDetails;
+
+            foreach (clsRecordDetails record in records)
+            {
+                if (record.Name != targetColumn.Name)
+                {
+                    parameters.Add($"ref {record.CSharpType} {record.Name}");
+                }
+            }
+
+            return string.Join(", ", parameters);
+        }
+
+        private static string GenerateReaderAssignmentsForColumn(clsRecordDetails targetColumn)
+        {
+            StringBuilder assignments = new StringBuilder();
+            List<clsRecordDetails> records = clsGlobalClass._ColumnDetails;
+
+            foreach (clsRecordDetails record in records)
+            {
+                if (record.Name != targetColumn.Name)
+                {
+                    assignments.AppendLine($"{record.Name} = ({record.CSharpType})reader[\"{record.Name}\"];");
+                }
+            }
+
+            return assignments.ToString();
+        }
         /*  static void HandleTheNallubleValue(ref string AddParameters, string ColumnName)
           {
               AddParameters += $@"      

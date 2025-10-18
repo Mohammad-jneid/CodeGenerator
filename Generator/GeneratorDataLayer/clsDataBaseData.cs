@@ -11,41 +11,7 @@ namespace GeneratorDataLayer
 {
     public class clsDataBaseData
     {
-        public static string ConvertSqlTypeToCSharpType(string sqlType)
-        {
-            switch (sqlType.ToLower())
-            {
-                case "int": return "int";
-                case "bigint": return "long";
-                case "smallint": return "short";
-                case "tinyint": return "byte";
-                case "bit": return "bool";
-                case "decimal":
-                case "numeric":
-                case "money":
-                case "smallmoney": return "decimal";
-                case "float": return "double";
-                case "real": return "float";
-                case "char":
-                case "varchar":
-                case "text":
-                case "nchar":
-                case "nvarchar":
-                case "ntext": return "string";
-                case "date":
-                case "datetime":
-                case "datetime2":
-                case "smalldatetime":
-                case "datetimeoffset": return "DateTime";
-                case "time": return "TimeSpan";
-                case "binary":
-                case "varbinary":
-                case "image": return "byte[]";
-                case "uniqueidentifier": return "Guid";
-                case "sql_variant": return "object";
-                default: return "string"; // fallback for unknown types
-            }
-        }
+        
 
         public static DataTable LoadDataBasesToDataTable()
         {
@@ -112,10 +78,10 @@ namespace GeneratorDataLayer
 
             return tables;
         }
-        public static List<clsRecordDetails> GetColomnInfoDetails(string databaseName, string tableName)
+        public static void LoadColomnInfoDetails(string databaseName, string tableName)
         {
-            List<clsRecordDetails> records = new List<clsRecordDetails>();
-
+            //List<clsRecordDetails> records = new List<clsRecordDetails>();
+            clsGlobalClass._ColumnDetails.Clear();
             try
             {
                 string connectionString = clsSettings.ConnectionString(databaseName);
@@ -162,9 +128,16 @@ namespace GeneratorDataLayer
                                     CSharpType = csharpType,
                                     YouWantToFindBy = false
 
+
                                 };
 
-                                records.Add(record);
+                                clsGlobalClass._ColumnDetails.Add(record);
+
+                                // Set the primary key column name
+                                if (record.IsPrimaryKey && string.IsNullOrEmpty(clsGlobalClass._PrimaryKeyColumn))
+                                {
+                                    clsGlobalClass._PrimaryKeyColumn = record.Name;
+                                }
                             }
                         }
                     }
@@ -175,10 +148,71 @@ namespace GeneratorDataLayer
                 Console.WriteLine("Error retrieving column info: " + ex.Message);
             }
 
-            return records;
         }
 
+        public static DataTable LoadColumnToDataTable(string DataBase, string TableName)
+        {
+            DataTable dt = new DataTable();
+            string query = @"
+        SELECT 
+            COLUMN_NAME AS Name,
+        FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE TABLE_NAME = @TableName
+        ORDER BY ORDINAL_POSITION";
 
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsSettings.ConnectionString(DataBase)))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TableName", TableName);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error loading column data: " + ex.Message);
+            }
+
+            return dt;
+        }
+
+        public static DataTable LoadTablesToDataTable(string DataBase)
+        {
+            DataTable dt = new DataTable();
+
+            string query = @"
+        SELECT 
+            TABLE_NAME 
+        FROM INFORMATION_SCHEMA.TABLES
+        WHERE TABLE_TYPE = 'BASE TABLE'
+        ORDER BY TABLE_NAME";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsSettings.ConnectionString(DataBase)))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error loading table list: " + ex.Message);
+            }
+
+            return dt;
+        }
     }
 
 }

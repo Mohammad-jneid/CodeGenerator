@@ -15,3 +15,4 @@ C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Deb
 C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\Generator.pdb
 C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\Global.dll
 C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\bin\Debug\Global.pdb
+C:\Users\messi\OneDrive\Desktop\MyProjects\Generator\Generator\Generator\obj\Debug\GenerateCode.frmColumnSelectionForm.resources

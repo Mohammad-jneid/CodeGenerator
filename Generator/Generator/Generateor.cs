@@ -12,6 +12,7 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace GenerateCode
         DataTable _DataTable;
         static string _DataBaseName;
         List<string> _Tables = new List<string>();
-
+        string _SelectedTable;
         public DatabasesList()
         {
             InitializeComponent();
@@ -36,9 +37,11 @@ namespace GenerateCode
             mtbProjectName.Text = "New Project";
             clsSettings.ProjectName = mtbProjectName.Text;
 
-            //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            //mtbProjectPath.Text = Path.Combine(path, clsSettings.ProjectName);
-            mtbProjectPath.Text = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            //mtbProjectPath.Text = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            mtbProjectPath.Text = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
+
+
             clsSettings.ProjectRootPath = mtbProjectPath.Text;
 
         }
@@ -137,6 +140,7 @@ namespace GenerateCode
                     case enClassType.DataAccess:
                         clsGenerateClass GenerateClassesDataAccess = new clsGenerateClass(clsGenerateClass.enClassType.DataAccess, tableName, _DataBaseName, clsSettings.FolderDataLayerPath);
                         GenerateClassesDataAccess.CreateTheFile();
+                        GenerateClassesDataAccess.LoadRecordDetails();
                         GenerateClassesDataAccess.AddTheHeader();
                         GenerateClassesDataAccess.GenerateDataAccessMethods();
                         GenerateClassesDataAccess.AddFooter();
@@ -144,6 +148,7 @@ namespace GenerateCode
                     case enClassType.Businesss:
                         clsGenerateClass GenerateClassesBusiness = new clsGenerateClass(clsGenerateClass.enClassType.Business, tableName, _DataBaseName, clsSettings.FolderBusinessLayerPath);
                         GenerateClassesBusiness.CreateTheFile();
+                        GenerateClassesBusiness.LoadRecordDetails();
                         GenerateClassesBusiness.AddTheHeader();
                         GenerateClassesBusiness.GeneratePropertyAndBusinessMethod();
                         GenerateClassesBusiness.AddFooter();
@@ -178,6 +183,14 @@ namespace GenerateCode
         private void cbDataBasesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             _DataBaseName = cbDataBasesList.Text;
+            if(cbDataBasesList.Text.ToString() != "master")
+            {
+                  DataTable dt = new DataTable();
+                dt= clsDataBaseBusiness.LoadTablesToDataTable(_DataBaseName);
+                cbTablesList.DataSource = dt;
+                cbTablesList.DisplayMember = "TABLE_NAME";
+            }
+              
         }
 
         void CreateDatalayer()
@@ -219,7 +232,28 @@ namespace GenerateCode
         {
 
         }
-         
+
+        private void panelSettings_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCheckForFindBy_Click(object sender, EventArgs e)
+        {
+            frmColumnSelectionForm frm = new frmColumnSelectionForm(_DataBaseName,_SelectedTable);
+            frm.ShowDialog();
+        }
+
+        private void cbTablesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cbTablesList.Text))
+            {
+                _SelectedTable = cbTablesList.Text;
+                btnCheckForFindBy.Enabled = true;
+            }
+        }
+
+
 
         //private void button1_Click(object sender, EventArgs e)
         //{

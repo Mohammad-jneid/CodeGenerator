@@ -29,7 +29,6 @@ namespace GenerateCode
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabasesList));
             this.lbCreateBusinessLayer = new System.Windows.Forms.Button();
             this.btnCreateDataLayer = new System.Windows.Forms.Button();
             this.cbDataBasesList = new System.Windows.Forms.ComboBox();
@@ -40,9 +39,11 @@ namespace GenerateCode
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelActions = new System.Windows.Forms.Panel();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.labelDatabase = new System.Windows.Forms.Label();
-            this.labelProjectSettings = new System.Windows.Forms.Label();
+            this.btnCheckForFindBy = new System.Windows.Forms.Button();
             this.labelPath = new System.Windows.Forms.Label();
+            this.labelProjectSettings = new System.Windows.Forms.Label();
+            this.labelDatabase = new System.Windows.Forms.Label();
+            this.cbTablesList = new System.Windows.Forms.ComboBox();
             this.panelMain.SuspendLayout();
             this.panelActions.SuspendLayout();
             this.panelSettings.SuspendLayout();
@@ -91,13 +92,11 @@ namespace GenerateCode
             // 
             this.cbDataBasesList.BackColor = System.Drawing.Color.White;
             this.cbDataBasesList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            //this.cbDataBasesList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            //this.cbDataBasesList.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDataBasesList.FormattingEnabled = true;
             this.cbDataBasesList.Location = new System.Drawing.Point(30, 75);
             this.cbDataBasesList.Margin = new System.Windows.Forms.Padding(4);
             this.cbDataBasesList.Name = "cbDataBasesList";
-            this.cbDataBasesList.Size = new System.Drawing.Size(320, 31);
+            this.cbDataBasesList.Size = new System.Drawing.Size(165, 24);
             this.cbDataBasesList.TabIndex = 2;
             this.cbDataBasesList.SelectedIndexChanged += new System.EventHandler(this.cbDataBasesList_SelectedIndexChanged);
             // 
@@ -105,11 +104,10 @@ namespace GenerateCode
             // 
             this.mtbProjectPath.BackColor = System.Drawing.Color.White;
             this.mtbProjectPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.mtbProjectPath.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbProjectPath.Location = new System.Drawing.Point(30, 240);
             this.mtbProjectPath.Margin = new System.Windows.Forms.Padding(4);
             this.mtbProjectPath.Name = "mtbProjectPath";
-            this.mtbProjectPath.Size = new System.Drawing.Size(320, 30);
+            this.mtbProjectPath.Size = new System.Drawing.Size(320, 22);
             this.mtbProjectPath.TabIndex = 3;
             // 
             // btBrows
@@ -135,23 +133,21 @@ namespace GenerateCode
             // 
             this.mtbProjectName.BackColor = System.Drawing.Color.White;
             this.mtbProjectName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.mtbProjectName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbProjectName.Location = new System.Drawing.Point(180, 170);
             this.mtbProjectName.Margin = new System.Windows.Forms.Padding(4);
             this.mtbProjectName.Name = "mtbProjectName";
-            this.mtbProjectName.Size = new System.Drawing.Size(230, 30);
+            this.mtbProjectName.Size = new System.Drawing.Size(230, 22);
             this.mtbProjectName.TabIndex = 5;
             this.mtbProjectName.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbProjectName_MaskInputRejected);
             // 
             // l
             // 
             this.l.AutoSize = true;
-            //this.l.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.l.Location = new System.Drawing.Point(26, 173);
             this.l.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.l.Name = "l";
-            this.l.Size = new System.Drawing.Size(146, 23);
+            this.l.Size = new System.Drawing.Size(92, 16);
             this.l.TabIndex = 6;
             this.l.Text = "Project Name:";
             // 
@@ -171,7 +167,7 @@ namespace GenerateCode
             // 
             // panelActions
             // 
-            this.panelActions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panelActions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelActions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.panelActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -185,10 +181,12 @@ namespace GenerateCode
             // 
             // panelSettings
             // 
-            this.panelSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panelSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSettings.BackColor = System.Drawing.Color.White;
+            this.panelSettings.Controls.Add(this.cbTablesList);
+            this.panelSettings.Controls.Add(this.btnCheckForFindBy);
             this.panelSettings.Controls.Add(this.labelPath);
             this.panelSettings.Controls.Add(this.labelProjectSettings);
             this.panelSettings.Controls.Add(this.labelDatabase);
@@ -202,18 +200,29 @@ namespace GenerateCode
             this.panelSettings.Name = "panelSettings";
             this.panelSettings.Size = new System.Drawing.Size(430, 450);
             this.panelSettings.TabIndex = 8;
+            this.panelSettings.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSettings_Paint);
             // 
-            // labelDatabase
+            // btnCheckForFindBy
             // 
-            this.labelDatabase.AutoSize = true;
-            this.labelDatabase.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.labelDatabase.Location = new System.Drawing.Point(25, 25);
-            this.labelDatabase.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDatabase.Name = "labelDatabase";
-            this.labelDatabase.Size = new System.Drawing.Size(183, 28);
-            this.labelDatabase.TabIndex = 7;
-            this.labelDatabase.Text = "Database Selection";
+            this.btnCheckForFindBy.Enabled = false;
+            this.btnCheckForFindBy.Location = new System.Drawing.Point(290, 125);
+            this.btnCheckForFindBy.Name = "btnCheckForFindBy";
+            this.btnCheckForFindBy.Size = new System.Drawing.Size(99, 25);
+            this.btnCheckForFindBy.TabIndex = 10;
+            this.btnCheckForFindBy.Text = "button1";
+            this.btnCheckForFindBy.UseVisualStyleBackColor = true;
+            this.btnCheckForFindBy.Click += new System.EventHandler(this.btnCheckForFindBy_Click);
+            // 
+            // labelPath
+            // 
+            this.labelPath.AutoSize = true;
+            this.labelPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.labelPath.Location = new System.Drawing.Point(26, 213);
+            this.labelPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPath.Name = "labelPath";
+            this.labelPath.Size = new System.Drawing.Size(82, 16);
+            this.labelPath.TabIndex = 9;
+            this.labelPath.Text = "Project Path:";
             // 
             // labelProjectSettings
             // 
@@ -223,21 +232,33 @@ namespace GenerateCode
             this.labelProjectSettings.Location = new System.Drawing.Point(25, 125);
             this.labelProjectSettings.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProjectSettings.Name = "labelProjectSettings";
-            this.labelProjectSettings.Size = new System.Drawing.Size(157, 28);
+            this.labelProjectSettings.Size = new System.Drawing.Size(162, 28);
             this.labelProjectSettings.TabIndex = 8;
             this.labelProjectSettings.Text = "Project Settings";
             // 
-            // labelPath
+            // labelDatabase
             // 
-            this.labelPath.AutoSize = true;
-            //this.labelPath.Font = new System.Drawing.Font( 10F, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.labelPath.Location = new System.Drawing.Point(26, 213);
-            this.labelPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPath.Name = "labelPath";
-            this.labelPath.Size = new System.Drawing.Size(119, 23);
-            this.labelPath.TabIndex = 9;
-            this.labelPath.Text = "Project Path:";
+            this.labelDatabase.AutoSize = true;
+            this.labelDatabase.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDatabase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.labelDatabase.Location = new System.Drawing.Point(25, 25);
+            this.labelDatabase.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDatabase.Name = "labelDatabase";
+            this.labelDatabase.Size = new System.Drawing.Size(193, 28);
+            this.labelDatabase.TabIndex = 7;
+            this.labelDatabase.Text = "Database Selection";
+            // 
+            // cbTablesList
+            // 
+            this.cbTablesList.BackColor = System.Drawing.Color.White;
+            this.cbTablesList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTablesList.FormattingEnabled = true;
+            this.cbTablesList.Location = new System.Drawing.Point(215, 75);
+            this.cbTablesList.Margin = new System.Windows.Forms.Padding(4);
+            this.cbTablesList.Name = "cbTablesList";
+            this.cbTablesList.Size = new System.Drawing.Size(165, 24);
+            this.cbTablesList.TabIndex = 11;
+            this.cbTablesList.SelectedIndexChanged += new System.EventHandler(this.cbTablesList_SelectedIndexChanged);
             // 
             // DatabasesList
             // 
@@ -247,7 +268,6 @@ namespace GenerateCode
             this.ClientSize = new System.Drawing.Size(832, 503);
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(850, 550);
             this.Name = "DatabasesList";
@@ -277,6 +297,8 @@ namespace GenerateCode
         private System.Windows.Forms.Label labelDatabase;
         private System.Windows.Forms.Label labelProjectSettings;
         private System.Windows.Forms.Label labelPath;
+        private System.Windows.Forms.Button btnCheckForFindBy;
+        private System.Windows.Forms.ComboBox cbTablesList;
     }
 }
 
