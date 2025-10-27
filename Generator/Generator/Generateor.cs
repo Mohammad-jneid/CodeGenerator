@@ -299,6 +299,13 @@ namespace GenerateCode
             GenerateClasses(enClassType.DataAccess);
             UpdateButtonStates();
             btnCreateDataLayer.Enabled = false;
+            mtbProjectName.Enabled = false;
+            lbCreateBusinessLayer.Enabled = false;
+            btBrows.Enabled = false;
+            btnCheckForFindBy.Enabled = false;
+            cbDataBasesList.Enabled = false;
+            cbTablesList.Enabled = false;
+             
         }
 
         private void btnCheckForFindBy_Click(object sender, EventArgs e)
